@@ -54,7 +54,7 @@ Product cards:
 - Subtitle/spec: muted gray, semibold.
 - Price: red, bold, clear but not oversized.
 - Original price: muted gray, strikethrough.
-- Metadata: small muted text.
+- Metadata: small muted text with seller, one-decimal merchant rating, and compact sold count.
 
 ## Layout
 
@@ -66,7 +66,10 @@ Product cards:
 - Background: brand red.
 - Content width aligns with the main page container: `max-w-4xl`.
 - Logo uses the original remote image without filter or distortion.
-- Right-side actions use inline SVG icons, not emoji.
+- Right side only contains the language selector.
+- Do not show search or hamburger/menu actions in the header.
+- Language selector is a white outlined rounded pill with a 20px filled globe icon and current language label.
+- Language label should feel lighter than a heavy CTA, roughly semibold with compact spacing.
 
 ### Hero
 
@@ -81,7 +84,6 @@ Mobile:
 - Single-column layout.
 - Hero image hidden.
 - Compact heading and short full subtitle.
-- Platform chip strip visible: Netflix, YouTube, Spotify, Disney+.
 
 Tablet/Desktop:
 
@@ -98,7 +100,7 @@ Hero subtitle:
 
 The trust bar should read as one cohesive badge:
 
-`鉁?DealShield Protection | 鈽?4.8/5 | 12k+ users`
+`DealShield Protection | 4.8/5 | 12k+ users`
 
 Style:
 
@@ -107,15 +109,32 @@ Style:
 - Light red-tinted border.
 - Soft shadow.
 - Consistent icon/text spacing.
+- Small inline status icons may be used, but the badge should not rely on emoji.
 - Single-line display where possible.
 
 ### Updated Signal
 
 The urgency line is intentionally weaker than the price and headline:
 
-`鈼?Updated just now 路 Limited deals available`
+Red dot + `Updated just now &middot; Limited deals available`
 
 Only the dot uses brand red. Text uses dark gray.
+
+## Service Filters
+
+Service filters sit directly above the product grid, not inside the header or hero.
+
+Behavior:
+
+- Available filters: All, Netflix, YouTube, Prime Video, Disney+, Gemini, DAZN, Runway, Xbox.
+- Filters are compact rounded pills, designed to fit above two-column mobile cards.
+- Active filter uses brand red styling; inactive filters stay quiet with light borders.
+- All view preserves tier order and shuffles within tiers on each refresh:
+  - Tier 1: Netflix, YouTube, Prime Video.
+  - Tier 2: Disney+, Gemini, DAZN.
+  - Tier 3: all other services.
+- Non-All filters show only matching service cards.
+- The bottom `View all deals` link changes to the selected service account entry.
 
 ## Product Grid
 
@@ -161,7 +180,9 @@ Text hierarchy:
 - Display subtitle/spec: second line, muted.
 - Price: brand red, bold.
 - Original price: muted gray, strikethrough.
-- Seller and viewing count: small muted metadata with a divider line above.
+- Seller, merchant rating, and sold count: small muted metadata with a divider line above.
+- Merchant rating displays as a one-decimal star score. Map comment rate so `80%` -> `1.0★` and `100%` -> `5.0★`.
+- Sold count is compact, e.g. `1731` becomes `1.7k sold`.
 
 ## Product Configuration
 
@@ -178,6 +199,7 @@ Each product supports:
 - `title`
 - `displayTitle`
 - `displaySubtitle`
+- `i18n`
 - `seller`
 - `service`
 - `image`
@@ -198,10 +220,38 @@ Current image assets:
 The page keeps existing business behavior:
 
 - Products load from `assets/products.json`.
-- Live prices are fetched from the GamsGo plan detail API.
+- Product copy uses the default fields for English and the product `i18n` object for other locales.
+- Live prices, merchant comment rate, and merchant comment count are fetched from the GamsGo plan detail API.
 - Fallback prices are used if live price fetch fails.
-- Product links receive Google Ads UTM parameters.
+- Product links and GamsGo entry links receive:
+  `utm_source=google&utm_medium=cpc&utm_campaign=GG_Suppliers_260604&promote=Z3UNq`.
+- Do not add `utm_content` or `utm_term` back to outbound URLs.
 - Product card clicks fire `cta_click` with `sku` and `offer_id`.
+- Product cards navigate in the current tab.
+- Only the bottom `View all deals on GamsGo ->` link opens in a new tab.
+
+## Internationalization
+
+Supported locales:
+
+- English: default, no language path.
+- French: `/fr/`.
+- German: `/de/`.
+- Spanish: `/es/`.
+- Portuguese: `/pt/`.
+- Italian: `www.gamsgo.it`, no `/it/` path.
+- Korean: `/ko/`.
+- Arabic: `/ar/` and RTL direction.
+
+Page copy lives in the `COPY` object in `index.html`. Product title and subtitle translations live in each product's `i18n` object in `assets/products.json`.
+
+## SEO
+
+The page is for controlled ads traffic and should keep:
+
+```html
+<meta name="robots" content="noindex, nofollow">
+```
 
 ## Compliance
 
@@ -230,3 +280,4 @@ assets/
 - Preserve fast loading and simple static deployment.
 - Do not introduce heavy animation or complex frameworks.
 - Do not change business logic when making UI-only refinements.
+- Do not add separate service entry cards inside the product grid.

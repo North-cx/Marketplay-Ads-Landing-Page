@@ -92,6 +92,37 @@
         -webkit-tap-highlight-color: transparent;
       }
 
+      .price-cta {
+        position: relative;
+        display: grid;
+        grid-template-columns: minmax(0, 1fr) minmax(44px, 0.58fr);
+        min-height: 42px;
+        overflow: hidden;
+        border-radius: 10px;
+        background:
+          linear-gradient(112deg, var(--brand) 0%, var(--brand) 62%, transparent 62.4%),
+          linear-gradient(112deg, transparent 0%, transparent 59%, #fff7f1 59.4%, #fff7f1 100%);
+        box-shadow: inset 0 0 0 1px rgba(239, 83, 79, 0.12);
+      }
+
+      .price-cta::after {
+        content: "";
+        position: absolute;
+        bottom: -11px;
+        left: 54%;
+        width: 18px;
+        height: 22px;
+        border-radius: 999px 999px 0 0;
+        background: #fff;
+        transform: rotate(16deg);
+      }
+
+      .price-cta__main,
+      .price-cta__save {
+        position: relative;
+        z-index: 1;
+      }
+
       .trust-bar {
         background: #fff;
         border: 1px solid rgba(239, 83, 79, 0.10);
@@ -132,7 +163,7 @@
     </style>
   </head>
   <body class="bg-white antialiased">
-    <header class="sticky top-0 z-40 h-12 bg-brand md:h-14">
+    <header class="sticky top-0 z-40 h-12 bg-brand md:h-14" dir="ltr">
       <nav class="mx-auto flex h-12 max-w-4xl items-center justify-between px-4 md:h-14" aria-label="GamsGo header">
         <a href="https://www.gamsgo.com" class="flex h-12 min-w-0 items-center md:h-14" aria-label="GamsGo">
           <img
@@ -193,12 +224,12 @@
         </div>
       </section>
 
-      <section id="plans" class="bg-white px-4 pb-2 pt-4 md:-mt-1 md:pt-0" aria-label="Subscription deals">
+      <section id="plans" class="bg-white px-4 pb-2 pt-4 text-left md:-mt-1 md:pt-0" aria-label="Subscription deals" dir="ltr">
         <div class="mx-auto max-w-4xl">
           <div id="service-filters" class="mb-2 flex flex-wrap gap-1.5" aria-label="Filter subscription deals"></div>
           <div id="product-grid" class="grid grid-cols-2 items-start gap-3 md:grid-cols-4"></div>
-          <div class="mt-2 border-t border-gray-100 py-3 text-center">
-            <a class="inline-flex min-h-11 items-center justify-center text-xs font-semibold text-muted hover:text-ink" href="https://www.gamsgo.com/?category_id=marketplace" target="_blank" rel="noopener" data-i18n="viewAll">View all deals on GamsGo &rarr;</a>
+          <div class="mt-3 border-t border-gray-100 py-4 text-center">
+            <a class="inline-flex min-h-10 items-center justify-center rounded-full border border-brand/25 bg-sectionAlt px-4 text-xs font-extrabold text-brand shadow-[0_4px_12px_rgba(239,83,79,0.08)] transition hover:border-brand/45 hover:bg-white hover:shadow-[0_8px_18px_rgba(239,83,79,0.12)]" href="https://www.gamsgo.com/?category_id=marketplace" target="_blank" rel="noopener" data-i18n="viewAll">View all deals on GamsGo &rarr;</a>
           </div>
         </div>
       </section>
@@ -326,6 +357,7 @@
           viewed: "viewed",
           get: "Get",
           saveAmount: "Save",
+          dealPrice: "Deal price",
           dealsUnavailable: "Deals are temporarily unavailable. Please refresh in a moment."
         },
         fr: {
@@ -356,10 +388,11 @@
           thirdParty: "Cette page promeut un service tiers non officiel d'abonnements partagés.",
           terms: "Conditions d'utilisation",
           refund: "Politique de remboursement",
-          savePrefix: "Économisez",
+          savePrefix: "Éco.",
           viewed: "vues",
           get: "Obtenir",
-          saveAmount: "Économisez",
+          saveAmount: "Éco.",
+          dealPrice: "Prix promo",
           dealsUnavailable: "Les offres sont temporairement indisponibles. Veuillez actualiser dans un instant."
         },
         de: {
@@ -394,6 +427,7 @@
           viewed: "angesehen",
           get: "Erhalten",
           saveAmount: "Sparen",
+          dealPrice: "Dealpreis",
           dealsUnavailable: "Angebote sind vorübergehend nicht verfügbar. Bitte aktualisieren Sie gleich erneut."
         },
         es: {
@@ -428,6 +462,7 @@
           viewed: "vistas",
           get: "Obtener",
           saveAmount: "Ahorra",
+          dealPrice: "Precio oferta",
           dealsUnavailable: "Las ofertas no están disponibles temporalmente. Actualiza de nuevo en un momento."
         },
         pt: {
@@ -462,6 +497,7 @@
           viewed: "visualizações",
           get: "Obter",
           saveAmount: "Economize",
+          dealPrice: "Preço oferta",
           dealsUnavailable: "As ofertas estão temporariamente indisponíveis. Atualize novamente em instantes."
         },
         it: {
@@ -496,6 +532,7 @@
           viewed: "visualizzazioni",
           get: "Ottieni",
           saveAmount: "Risparmia",
+          dealPrice: "Prezzo offerta",
           dealsUnavailable: "Le offerte sono temporaneamente non disponibili. Aggiorna di nuovo tra poco."
         },
         ko: {
@@ -530,6 +567,7 @@
           viewed: "명이 봄",
           get: "구매",
           saveAmount: "절약",
+          dealPrice: "할인가",
           dealsUnavailable: "현재 특가를 일시적으로 사용할 수 없습니다. 잠시 후 새로고침해 주세요."
         },
         ar: {
@@ -564,6 +602,7 @@
           viewed: "مشاهدة",
           get: "احصل على",
           saveAmount: "وفر",
+          dealPrice: "سعر العرض",
           dealsUnavailable: "العروض غير متاحة مؤقتا. يرجى التحديث بعد قليل."
         }
       };
@@ -695,7 +734,7 @@
           return "";
         }
 
-        const stars = Math.max(0, Math.min(5, percent / 20));
+        const stars = 1 + ((Math.max(80, Math.min(100, percent)) - 80) / 20) * 4;
         return stars.toFixed(1);
       }
 
@@ -833,16 +872,27 @@
                 <span class="block truncate">${titleLine}</span>
                 <span class="deal-subtitle subtitle-clamp">${subtitleLine}</span>
               </h2>
-              <div class="flex min-w-0 items-baseline gap-1">
-                <span class="price-value text-[15px] font-extrabold leading-none text-brand md:text-base" data-price-key="${key}">${money(price)}</span>
-                <span class="truncate text-[10px] font-medium text-muted line-through">${money(product.official)}</span>
+              <div class="price-cta" aria-hidden="true">
+                <div class="price-cta__main flex min-w-0 flex-col justify-center px-2 py-1 text-white">
+                  <span class="price-value text-[16px] font-extrabold leading-none md:text-[17px]" data-price-key="${key}">${money(price)}</span>
+                  <span class="mt-0.5 text-[8px] font-bold uppercase leading-none text-white/85">${t("dealPrice")}</span>
+                </div>
+                <div class="price-cta__save flex min-w-0 flex-col items-center justify-center px-1 py-1 text-center text-brand">
+                  <span class="text-[10px] font-extrabold leading-none">${t("saveAmount")}</span>
+                  <span class="mt-0.5 text-[11px] font-extrabold leading-none">${money(saveDollars(product, price))}</span>
+                  <span class="mt-0.5 max-w-full truncate text-[8px] font-semibold leading-none text-muted line-through">${money(product.official)}</span>
+                </div>
               </div>
               <div class="mt-0.5 flex min-w-0 items-center justify-between gap-1 border-t border-gray-100 pt-1.5">
                 <div class="flex min-w-0 items-center gap-1">
                   <span class="flex h-4 w-4 shrink-0 items-center justify-center rounded-full bg-gray-100 text-[7px] font-bold text-muted">${initials(product.seller)}</span>
                   <span class="max-w-[50px] truncate text-[9px] font-medium text-muted sm:max-w-[58px] md:max-w-[62px]">${product.seller}</span>
                 </div>
-                <span class="shrink-0 text-[8px] font-semibold text-muted sm:text-[9px]">${merchantStats.rating}★ · ${compactCount(merchantStats.orders)} sold</span>
+                <span class="inline-flex max-w-[82px] shrink-0 items-center justify-end gap-0.5 text-[8px] font-extrabold leading-none sm:max-w-[90px] sm:text-[9px] md:max-w-[96px]">
+                  <span class="text-[#F59E0B]">&#9733; ${merchantStats.rating}</span>
+                  <span class="text-gray-300" aria-hidden="true">&middot;</span>
+                  <span class="truncate text-gray-700">${compactCount(merchantStats.orders)} sold</span>
+                </span>
               </div>
               <div class="sr-only">${t("get")} ${money(price)}. ${t("saveAmount")} ${money(saveDollars(product, price))}.</div>
             </div>
@@ -921,14 +971,16 @@
         filterContainer.innerHTML = filters.map((filter) => {
           const isActive = filter.service === activeServiceFilter;
           const stateClasses = isActive ? "border-brand bg-brand text-white shadow-sm hover:text-white" : "border-gray-200 bg-white text-muted shadow-sm hover:border-brand hover:text-brand";
+          const isHot = ["Netflix", "YouTube"].includes(filter.service);
+          const hotBadge = isHot ? `<span class="ml-0.5 inline-flex items-center text-[10px] leading-none" aria-label="Hot">&#128293;</span>` : "";
 
           return `
             <button
               type="button"
-              class="min-h-7 rounded-full border px-2.5 py-0.5 text-[10px] font-bold leading-4 transition md:min-h-7 md:px-3 md:text-[11px] ${stateClasses}"
+              class="inline-flex min-h-7 items-center rounded-full border px-2.5 py-0.5 text-[10px] font-bold leading-4 transition md:min-h-7 md:px-3 md:text-[11px] ${stateClasses}"
               aria-pressed="${isActive}"
               data-service-filter="${filter.service}"
-            >${filter.label}</button>
+            >${filter.label}${hotBadge}</button>
           `;
         }).join("");
 

@@ -42,22 +42,30 @@ assets/
 1. Sticky top header:
    - Red background.
    - Original GamsGo logo.
-   - Line-style SVG icons for language, search, and menu.
+   - White outlined rounded language pill with globe icon and current language label.
+   - Do not add search or hamburger/menu buttons unless explicitly requested.
 
 2. Hero:
    - Main title: `Premium Subscriptions, Fraction of the Cost.`
    - Short subtitle: `Shared premium plans with instant setup, clear pricing, and DealShield protection.`
    - Trust bar: `DealShield Protection`, `4.8/5`, `12k+ users`.
-   - Weak urgency line: `Updated just now 路 Limited deals available`.
+   - Weak urgency line: red dot + `Updated just now &middot; Limited deals available`.
    - Desktop only: right-side hero image.
-   - Mobile only: compact platform chips such as Netflix, YouTube, Spotify, Disney+.
 
 3. Product grid:
+   - Compact service filter pills sit directly above the product grid on mobile and desktop.
+   - Filters include: All, Netflix, YouTube, Prime Video, Disney+, Gemini, DAZN, Runway, Xbox.
+   - The All view is shuffled on every refresh, while preserving tier order:
+     - Tier 1: Netflix, YouTube, Prime Video.
+     - Tier 2: Disney+, Gemini, DAZN.
+     - Tier 3: all other services.
    - Mobile: 2 columns.
    - Desktop: 4 columns.
    - Product cards are entire clickable outbound links.
    - No card-level internal CTA buttons.
    - No mobile bottom fixed Buy Now bar.
+   - Product card metadata shows seller, merchant star rating, and compact sold count when available.
+   - Each non-All filter changes the bottom `View all deals` link into that service's GamsGo account entry.
 
 4. Benefits strip:
    - Four items: Low Price, Genuine, Instant, Guaranteed.
@@ -89,6 +97,7 @@ Each product object should include:
 - `title`
 - `displayTitle`
 - `displaySubtitle`
+- `i18n`
 - `seller`
 - `service`
 - `image`
@@ -107,10 +116,13 @@ Product image containers use a `16 / 9` ratio. The square source images should b
 
 ## CTA And Tracking
 
-- Product links append Google Ads UTM parameters:
-  `utm_source=google&utm_medium=cpc&utm_campaign=CAMPAIGN_ID&utm_content=<sku>&utm_term=<offerId>`.
+- Product links and GamsGo entry links append the shared Google Ads parameters:
+  `utm_source=google&utm_medium=cpc&utm_campaign=GG_Suppliers_260604&promote=Z3UNq`.
+- Do not add `utm_content` or `utm_term` back to outbound URLs.
 - Product card clicks fire:
   `gtag("event", "cta_click", { sku, offer_id, event_category: "outbound", event_label })`.
+- Product cards navigate in the current tab.
+- Only the bottom `View all deals on GamsGo ->` link opens in a new tab.
 - Keep `page_view` tracking.
 - Do not remove or bypass UTM and GA4 tracking logic when making UI changes.
 
@@ -121,13 +133,26 @@ Product image containers use a `16 / 9` ratio. The square source images should b
 - Request body includes:
   `language`, `show_currency`, and `type_plan_id`.
 - Use `data.total_price` when available.
+- Use `data.merchant_comment_rate` when available and convert percent to a one-decimal star score by mapping `80%` -> `1.0` and `100%` -> `5.0`.
+- Use `data.merchant_comment_num` when available and display it as a compact sold count, e.g. `1731` -> `1.7k`.
 - Keep fallback prices from `assets/products.json` on API failure.
 
 ## i18n
 
 - Default locale is English.
 - Copy is stored in the `COPY` object in `index.html`.
-- The language button currently preserves English but should remain wired for future locale expansion.
+- Supported locales: `en`, `fr`, `de`, `es`, `pt`, `it`, `ko`, `ar`.
+- Product title/subtitle translations live under each product's `i18n` object in `assets/products.json`.
+- Arabic uses RTL direction.
+- Locale is persisted in `localStorage` under `gamsgo-locale`.
+- GamsGo URL locale rules:
+  - English uses no language path.
+  - French, German, Spanish, Portuguese, Korean, and Arabic use `/fr/`, `/de/`, `/es/`, `/pt/`, `/ko/`, and `/ar/`.
+  - Italian uses the `www.gamsgo.it` domain and does not use an `/it/` path.
+
+## SEO
+
+- Keep `<meta name="robots" content="noindex, nofollow">` unless the campaign is explicitly approved for indexing.
 
 ## Performance
 
@@ -153,5 +178,7 @@ Product image containers use a `16 / 9` ratio. The square source images should b
   - Bottom fixed Buy Now bar.
   - Internal card CTA buttons.
   - Emoji header icons.
+  - Header search or hamburger/menu buttons.
   - Hardcoded product card HTML.
+  - Separate service entry cards inside the grid.
   - Unrelated variant/stitch files.
