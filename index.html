@@ -1,0 +1,1141 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+    <meta name="description" content="Dense GamsGo deal board for independent third-party shared-subscription offers with DealShield protection.">
+    <meta name="robots" content="noindex, nofollow">
+    <title>GamsGo | Premium Subscriptions for Less</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              brand: "var(--brand)",
+              coral: "var(--coral)",
+              save: "var(--save)",
+              ink: "var(--text)",
+              muted: "var(--muted)",
+              sectionAlt: "var(--section-alt)"
+            },
+            fontFamily: {
+              sans: ["Plus Jakarta Sans", "Inter", "ui-sans-serif", "system-ui", "sans-serif"]
+            }
+          }
+        }
+      };
+    </script>
+    <style>
+      /*
+        Color tokens:
+        --brand #ef534f: prices and CTA buttons only
+        --coral #FF5A4D: hover/active CTA gradient
+        --save #10B981: save badges
+        --section-alt #FFF5F3: alternating section background
+        --text #111827 / --muted #6B7280: primary and secondary copy
+      */
+      :root {
+        --brand: #ef534f;
+        --coral: #FF5A4D;
+        --save: #10B981;
+        --best-price: #F59E0B;
+        --best-value: #3B82F6;
+        --text: #111827;
+        --muted: #6B7280;
+        --section-alt: #FFF5F3;
+      }
+
+      html {
+        scroll-behavior: smooth;
+      }
+
+      body {
+        color: var(--text);
+        font-family: "Plus Jakarta Sans", Inter, ui-sans-serif, system-ui, sans-serif;
+      }
+
+      details > summary {
+        list-style: none;
+      }
+
+      details > summary::-webkit-details-marker {
+        display: none;
+      }
+
+      .line-clamp-2 {
+        display: -webkit-box;
+        -webkit-line-clamp: 2;
+        -webkit-box-orient: vertical;
+        overflow: hidden;
+      }
+
+      .deal-subtitle {
+        display: block;
+        color: var(--muted);
+        font-weight: 600;
+      }
+
+      .subtitle-clamp {
+        display: -webkit-box;
+        -webkit-line-clamp: 2;
+        -webkit-box-orient: vertical;
+        overflow: hidden;
+        white-space: normal;
+      }
+
+      .deal-card {
+        min-width: 0;
+        -webkit-tap-highlight-color: transparent;
+      }
+
+      .trust-bar {
+        background: #fff;
+        border: 1px solid rgba(239, 83, 79, 0.10);
+        box-shadow: 0 8px 24px rgba(17,24,39,0.08);
+      }
+
+      .deal-card:focus-visible,
+      .icon-link:focus-visible {
+        outline: 2px solid var(--brand);
+        outline-offset: 2px;
+      }
+
+      .product-art {
+        position: relative;
+        isolation: isolate;
+        background: linear-gradient(180deg, #F9FAFB 0%, #F3F4F6 100%);
+        aspect-ratio: 16 / 9;
+      }
+
+      .hero-visual {
+        background:
+          linear-gradient(135deg, rgba(239,83,79,0.08), rgba(255,245,243,0.42)),
+          #fff;
+      }
+
+      .hero-visual img {
+        aspect-ratio: 16 / 10;
+        max-height: min(34vw, 340px);
+      }
+
+      .language-menu {
+        inset-inline-end: 0;
+      }
+
+      [dir="rtl"] body {
+        text-align: right;
+      }
+    </style>
+  </head>
+  <body class="bg-white antialiased">
+    <header class="sticky top-0 z-40 h-12 bg-brand md:h-14">
+      <nav class="mx-auto flex h-12 max-w-4xl items-center justify-between px-4 md:h-14" aria-label="GamsGo header">
+        <a href="https://www.gamsgo.com" class="flex h-12 min-w-0 items-center md:h-14" aria-label="GamsGo">
+          <img
+            src="https://static.gamsgocdn.com/image/6c0c5709ee54b72f9d153f6013a152dd.webp"
+            width="132"
+            height="36"
+            alt="GamsGo"
+            class="block"
+            fetchpriority="high"
+          >
+        </a>
+        <div class="flex items-center gap-2 text-white sm:gap-3">
+          <div class="relative">
+            <button id="language-toggle" type="button" class="icon-link inline-flex h-9 min-w-[118px] items-center justify-center rounded-full border border-white/75 px-4 text-[14px] font-semibold leading-none tracking-normal text-white transition hover:bg-white/10 md:h-10 md:min-w-[126px] md:px-5 md:text-[15px]" aria-label="Switch language" aria-haspopup="true" aria-expanded="false">
+              <svg class="h-5 w-5 shrink-0" viewBox="0 0 20 20" fill="none" aria-hidden="true"><path fill="currentColor" fill-rule="evenodd" d="M3.7 16.3q2.61 2.6 6.3 2.6t6.3-2.6 2.6-6.3q0-3.69-2.6-6.3T10 1.1 3.7 3.7 1.1 10t2.6 6.3m4.19.5q-1.62-.49-2.91-1.78-1.75-1.75-2.03-4.12h2.98q.2 3.26 1.96 5.9m4.22 0q1.62-.49 2.91-1.78 1.75-1.75 2.03-4.12h-2.98q-.2 3.26-1.96 5.9m1.96-7.7h2.98q-.28-2.37-2.03-4.12-1.29-1.29-2.9-1.78 1.74 2.64 1.95 5.9M7.9 3.2q-1.62.49-2.91 1.78Q3.23 6.73 2.95 9.1h2.98q.2-3.26 1.96-5.9m2.11.16q2.02 2.52 2.27 5.74H7.73Q7.98 5.88 10 3.36M7.73 10.9h4.54q-.25 3.22-2.27 5.74-2.02-2.52-2.27-5.74"></path></svg>
+              <span id="current-language-label" class="ml-2 whitespace-nowrap">English</span>
+            </button>
+            <div id="language-menu" class="language-menu absolute top-full z-50 mt-2 hidden w-40 overflow-hidden rounded-lg border border-gray-100 bg-white py-1 text-sm font-semibold text-ink shadow-xl" role="menu" aria-label="Language selector"></div>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <main>
+      <section class="bg-[linear-gradient(180deg,#FFF5F5_0%,#FFFFFF_100%)] px-4 pb-5 pt-5 md:px-4 md:pb-6 md:pt-8 lg:pt-9">
+        <div class="mx-auto grid max-w-4xl gap-5 md:grid-cols-[0.98fr_1.02fr] md:items-center md:gap-9 lg:gap-11">
+          <div>
+            <h1 class="max-w-[330px] text-[28px] font-extrabold leading-[1.12] tracking-[-0.03em] text-ink sm:max-w-none sm:text-[31px] md:text-[38px] md:leading-[1.08] lg:text-[42px]">
+              <span class="block text-[#111827]" data-i18n="heroTitleLine1">Premium Subscriptions,</span>
+              <span class="block text-brand" data-i18n="heroTitleLine2">Fraction of the Cost.</span>
+            </h1>
+            <p class="mt-3 max-w-[350px] text-[14px] leading-5 text-muted sm:max-w-[390px] sm:text-[15px] md:mt-4 md:max-w-[430px] md:text-[16px] md:leading-7" data-i18n="heroSubline">Shared premium plans with instant setup, clear pricing, and DealShield protection.</p>
+            <div class="trust-bar mt-4 inline-flex min-h-10 max-w-full items-center gap-2 rounded-full bg-white px-3.5 py-2 text-[11px] text-muted md:mt-4 md:gap-3 md:text-xs">
+              <span class="flex shrink-0 items-center gap-1.5 font-bold text-ink">
+                <span class="text-save" aria-hidden="true">&#10003;</span>
+                <span data-i18n="shieldBadge">DealShield Protection</span>
+              </span>
+              <span class="h-3 w-px shrink-0 bg-gray-200" aria-hidden="true"></span>
+              <span class="flex shrink-0 items-center gap-1">
+                <span class="text-[#F59E0B]" aria-hidden="true">&#9733;</span>
+                <span>4.8/5</span>
+              </span>
+              <span class="h-3 w-px shrink-0 bg-gray-200" aria-hidden="true"></span>
+              <span class="min-w-0 truncate" data-i18n="trustBar">12k+ users</span>
+            </div>
+            <p class="mt-3 text-[11px] font-semibold leading-4 text-gray-700 md:mt-3 md:text-xs" aria-live="polite"><span class="text-brand" aria-hidden="true">&#9679;</span> <span data-i18n="heroUrgency">Updated just now &middot; Limited deals available</span></p>
+          </div>
+          <figure class="hero-visual hidden overflow-hidden rounded-2xl border border-white shadow-[0_18px_45px_rgba(17,24,39,0.08)] md:block md:scale-[1.04] lg:scale-[1.07]">
+            <img
+              src="assets/hero-banner.webp"
+              width="1672"
+              height="941"
+              alt="Generic premium subscription deal board illustration"
+              class="h-auto w-full object-cover"
+              loading="eager"
+            >
+          </figure>
+        </div>
+      </section>
+
+      <section id="plans" class="bg-white px-4 pb-2 pt-4 md:-mt-1 md:pt-0" aria-label="Subscription deals">
+        <div class="mx-auto max-w-4xl">
+          <div id="service-filters" class="mb-2 flex flex-wrap gap-1.5" aria-label="Filter subscription deals"></div>
+          <div id="product-grid" class="grid grid-cols-2 items-start gap-3 md:grid-cols-4"></div>
+          <div class="mt-2 border-t border-gray-100 py-3 text-center">
+            <a class="inline-flex min-h-11 items-center justify-center text-xs font-semibold text-muted hover:text-ink" href="https://www.gamsgo.com/?category_id=marketplace" target="_blank" rel="noopener" data-i18n="viewAll">View all deals on GamsGo &rarr;</a>
+          </div>
+        </div>
+      </section>
+
+      <section class="border-y border-gray-100 bg-white px-3 py-4 sm:px-4" aria-label="Benefits">
+        <div class="mx-auto grid max-w-4xl grid-cols-4 gap-1">
+          <div class="flex min-w-0 flex-col items-center justify-center gap-1 text-center"><span class="text-[18px] leading-none text-brand" aria-hidden="true">$</span><span class="text-[9px] font-bold uppercase leading-3 tracking-wide text-ink" data-i18n="benefitLow">Low Price</span></div>
+          <div class="flex min-w-0 flex-col items-center justify-center gap-1 text-center"><span class="text-[18px] leading-none text-brand" aria-hidden="true">&#10003;</span><span class="text-[9px] font-bold uppercase leading-3 tracking-wide text-ink" data-i18n="benefitGenuine">Genuine</span></div>
+          <div class="flex min-w-0 flex-col items-center justify-center gap-1 text-center"><span class="text-[18px] leading-none text-brand" aria-hidden="true">&#9889;</span><span class="text-[9px] font-bold uppercase leading-3 tracking-wide text-ink" data-i18n="benefitInstant">Instant</span></div>
+          <div class="flex min-w-0 flex-col items-center justify-center gap-1 text-center"><span class="text-[18px] leading-none text-brand" aria-hidden="true">&#9635;</span><span class="text-[9px] font-bold uppercase leading-3 tracking-wide text-ink" data-i18n="benefitGuaranteed">Guaranteed</span></div>
+        </div>
+      </section>
+
+      <section class="bg-white px-4 py-5" aria-labelledby="trust-title">
+        <div class="mx-auto grid max-w-4xl gap-5 md:grid-cols-[0.9fr_1.1fr]">
+          <div>
+            <div class="inline-flex items-center gap-1.5 rounded-full bg-sectionAlt px-2.5 py-1 text-xs font-bold text-ink">
+              <span aria-hidden="true">&#9635;</span>
+              <span>DealShield</span>
+            </div>
+            <h2 id="trust-title" class="mt-2 text-base font-bold text-ink" data-i18n="trustTitle">Protected checkout for shared-subscription deals</h2>
+            <p class="mt-1 text-xs leading-5 text-muted" data-i18n="trustBody">Eligible orders include a practical support path for access or delivery issues.</p>
+            <div class="mt-3 grid gap-2 sm:grid-cols-3">
+              <article class="rounded-lg bg-gray-50 p-2 text-[11px] leading-4">
+                <div class="font-bold text-[#F59E0B]">&#9733;&#9733;&#9733;&#9733;&#9733; <span class="text-muted">US</span></div>
+                <p class="mt-1" data-i18n="reviewOne">"Fast setup and the price was clear."</p>
+              </article>
+              <article class="rounded-lg bg-gray-50 p-2 text-[11px] leading-4">
+                <div class="font-bold text-[#F59E0B]">&#9733;&#9733;&#9733;&#9733;&#9733; <span class="text-muted">CA</span></div>
+                <p class="mt-1" data-i18n="reviewTwo">"DealShield made the order feel safer."</p>
+              </article>
+              <article class="rounded-lg bg-gray-50 p-2 text-[11px] leading-4">
+                <div class="font-bold text-[#F59E0B]">&#9733;&#9733;&#9733;&#9733;&#9733; <span class="text-muted">GB</span></div>
+                <p class="mt-1" data-i18n="reviewThree">"Easy instructions after checkout."</p>
+              </article>
+            </div>
+          </div>
+
+          <div>
+            <h3 class="text-sm font-bold text-ink" data-i18n="faqTitle">FAQ</h3>
+            <div class="mt-2 divide-y divide-gray-100 rounded-lg border border-gray-100">
+              <details class="group p-3">
+                <summary class="flex cursor-pointer items-center justify-between gap-3 text-xs font-bold">
+                  <span data-i18n="faqOneQ">Is GamsGo official Netflix or YouTube?</span>
+                  <span class="text-brand transition group-open:rotate-45" aria-hidden="true">+</span>
+                </summary>
+                <p class="mt-2 text-xs leading-5 text-muted" data-i18n="faqOneA">No. GamsGo is an independent third-party intermediary service and is not affiliated with listed brands.</p>
+              </details>
+              <details class="group p-3">
+                <summary class="flex cursor-pointer items-center justify-between gap-3 text-xs font-bold">
+                  <span data-i18n="faqTwoQ">When does access start?</span>
+                  <span class="text-brand transition group-open:rotate-45" aria-hidden="true">+</span>
+                </summary>
+                <p class="mt-2 text-xs leading-5 text-muted" data-i18n="faqTwoA">Most offers provide instructions shortly after checkout. Exact timing can vary by seller and plan.</p>
+              </details>
+              <details class="group p-3">
+                <summary class="flex cursor-pointer items-center justify-between gap-3 text-xs font-bold">
+                  <span data-i18n="faqThreeQ">What if the plan stops working?</span>
+                  <span class="text-brand transition group-open:rotate-45" aria-hidden="true">+</span>
+                </summary>
+                <p class="mt-2 text-xs leading-5 text-muted" data-i18n="faqThreeA">Use GamsGo support and refund-policy channels. DealShield applies to eligible orders under posted terms.</p>
+              </details>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="bg-ink px-4 py-6 text-xs leading-5 text-white">
+      <div class="mx-auto max-w-4xl">
+        <p data-i18n="disclaimer">GamsGo is an independent third-party intermediary service. Not officially affiliated with, endorsed by, or sponsored by Netflix, YouTube, or any listed brand.</p>
+        <p class="mt-2 text-white/70" data-i18n="thirdParty">This landing page promotes an unofficial third-party shared-subscription service.</p>
+        <p class="mt-3 flex flex-wrap gap-3">
+          <a class="inline-flex min-h-11 items-center underline underline-offset-4 hover:text-white/80" href="https://www.gamsgo.com/terms" data-i18n="terms">Terms of Service</a>
+          <a class="inline-flex min-h-11 items-center underline underline-offset-4 hover:text-white/80" href="https://www.gamsgo.com/refund-policy" data-i18n="refund">Refund Policy</a>
+        </p>
+      </div>
+    </footer>
+
+    <script>
+      const PRODUCT_CONFIG_URL = "assets/products.json";
+      let PRODUCTS = [];
+
+      const LOCALES = [
+        { code: "en", label: "English", apiLanguage: "en", dir: "ltr" },
+        { code: "fr", label: "Français", apiLanguage: "fr", dir: "ltr" },
+        { code: "de", label: "Deutsch", apiLanguage: "de", dir: "ltr" },
+        { code: "es", label: "Español", apiLanguage: "es", dir: "ltr" },
+        { code: "pt", label: "Português", apiLanguage: "pt", dir: "ltr" },
+        { code: "it", label: "Italiano", apiLanguage: "it", dir: "ltr" },
+        { code: "ko", label: "한국어", apiLanguage: "ko", dir: "ltr" },
+        { code: "ar", label: "العربية", apiLanguage: "ar", dir: "rtl" }
+      ];
+
+      const COPY = {
+        en: {
+          heroTitleLine1: "Premium Subscriptions,",
+          heroTitleLine2: "Fraction of the Cost.",
+          heroSubline: "Shared premium plans with instant setup, clear pricing, and DealShield protection.",
+          heroUrgency: "Updated just now \u00B7 Limited deals available",
+          shieldBadge: "DealShield Protection",
+          trustBar: "12k+ users",
+          viewAll: "View all deals on GamsGo \u2192",
+          benefitLow: "Low Price",
+          benefitGenuine: "Genuine",
+          benefitInstant: "Instant",
+          benefitGuaranteed: "Guaranteed",
+          trustTitle: "Protected checkout for shared-subscription deals",
+          trustBody: "Eligible orders include a practical support path for access or delivery issues.",
+          reviewOne: "\"Fast setup and the price was clear.\"",
+          reviewTwo: "\"DealShield made the order feel safer.\"",
+          reviewThree: "\"Easy instructions after checkout.\"",
+          faqTitle: "FAQ",
+          faqOneQ: "Is GamsGo official Netflix or YouTube?",
+          faqOneA: "No. GamsGo is an independent third-party intermediary service and is not affiliated with listed brands.",
+          faqTwoQ: "When does access start?",
+          faqTwoA: "Most offers provide instructions shortly after checkout. Exact timing can vary by seller and plan.",
+          faqThreeQ: "What if the plan stops working?",
+          faqThreeA: "Use GamsGo support and refund-policy channels. DealShield applies to eligible orders under posted terms.",
+          disclaimer: "GamsGo is an independent third-party intermediary service. Not officially affiliated with, endorsed by, or sponsored by Netflix, YouTube, or any listed brand.",
+          thirdParty: "This landing page promotes an unofficial third-party shared-subscription service.",
+          terms: "Terms of Service",
+          refund: "Refund Policy",
+          savePrefix: "Save",
+          viewed: "viewed",
+          get: "Get",
+          saveAmount: "Save",
+          dealsUnavailable: "Deals are temporarily unavailable. Please refresh in a moment."
+        },
+        fr: {
+          heroTitleLine1: "Abonnements premium,",
+          heroTitleLine2: "à prix réduit.",
+          heroSubline: "Plans premium partagés avec activation rapide, prix clairs et protection DealShield.",
+          heroUrgency: "Mis à jour à l'instant · Offres limitées disponibles",
+          shieldBadge: "Protection DealShield",
+          trustBar: "12k+ utilisateurs",
+          viewAll: "Voir toutes les offres sur GamsGo →",
+          benefitLow: "Prix bas",
+          benefitGenuine: "Authentique",
+          benefitInstant: "Instantané",
+          benefitGuaranteed: "Garanti",
+          trustTitle: "Paiement protégé pour les offres d'abonnements partagés",
+          trustBody: "Les commandes éligibles incluent un parcours d'assistance pratique en cas de problème d'accès ou de livraison.",
+          reviewOne: "\"Activation rapide et prix clair.\"",
+          reviewTwo: "\"DealShield a rendu la commande plus rassurante.\"",
+          reviewThree: "\"Instructions simples après le paiement.\"",
+          faqTitle: "FAQ",
+          faqOneQ: "GamsGo est-il le service officiel de Netflix ou YouTube ?",
+          faqOneA: "Non. GamsGo est un service intermédiaire tiers indépendant et n'est pas affilié aux marques listées.",
+          faqTwoQ: "Quand l'accès commence-t-il ?",
+          faqTwoA: "La plupart des offres fournissent des instructions peu après le paiement. Le délai exact peut varier selon le vendeur et le plan.",
+          faqThreeQ: "Que faire si le plan cesse de fonctionner ?",
+          faqThreeA: "Utilisez les canaux d'assistance et de politique de remboursement de GamsGo. DealShield s'applique aux commandes éligibles selon les conditions publiées.",
+          disclaimer: "GamsGo est un service intermédiaire tiers indépendant. Il n'est pas officiellement affilié, approuvé ni sponsorisé par Netflix, YouTube ou toute marque listée.",
+          thirdParty: "Cette page promeut un service tiers non officiel d'abonnements partagés.",
+          terms: "Conditions d'utilisation",
+          refund: "Politique de remboursement",
+          savePrefix: "Économisez",
+          viewed: "vues",
+          get: "Obtenir",
+          saveAmount: "Économisez",
+          dealsUnavailable: "Les offres sont temporairement indisponibles. Veuillez actualiser dans un instant."
+        },
+        de: {
+          heroTitleLine1: "Premium-Abos,",
+          heroTitleLine2: "zum Bruchteil der Kosten.",
+          heroSubline: "Geteilte Premium-Tarife mit schneller Einrichtung, klaren Preisen und DealShield-Schutz.",
+          heroUrgency: "Gerade aktualisiert · Begrenzte Angebote verfügbar",
+          shieldBadge: "DealShield-Schutz",
+          trustBar: "12k+ Nutzer",
+          viewAll: "Alle Angebote auf GamsGo ansehen →",
+          benefitLow: "Niedriger Preis",
+          benefitGenuine: "Echt",
+          benefitInstant: "Sofort",
+          benefitGuaranteed: "Garantiert",
+          trustTitle: "Geschützter Checkout für geteilte Abo-Angebote",
+          trustBody: "Berechtigte Bestellungen enthalten einen praktischen Supportweg bei Zugangs- oder Lieferproblemen.",
+          reviewOne: "\"Schnelle Einrichtung und klarer Preis.\"",
+          reviewTwo: "\"DealShield hat die Bestellung sicherer gemacht.\"",
+          reviewThree: "\"Einfache Anweisungen nach dem Checkout.\"",
+          faqTitle: "FAQ",
+          faqOneQ: "Ist GamsGo offizieller Netflix- oder YouTube-Anbieter?",
+          faqOneA: "Nein. GamsGo ist ein unabhängiger Drittanbieter-Vermittlungsservice und ist nicht mit den gelisteten Marken verbunden.",
+          faqTwoQ: "Wann beginnt der Zugriff?",
+          faqTwoA: "Die meisten Angebote liefern kurz nach dem Checkout Anweisungen. Der genaue Zeitpunkt kann je nach Verkäufer und Plan variieren.",
+          faqThreeQ: "Was passiert, wenn der Plan nicht mehr funktioniert?",
+          faqThreeA: "Nutzen Sie den GamsGo-Support und die Erstattungskanäle. DealShield gilt für berechtigte Bestellungen gemäß den veröffentlichten Bedingungen.",
+          disclaimer: "GamsGo ist ein unabhängiger Drittanbieter-Vermittlungsservice. Nicht offiziell mit Netflix, YouTube oder einer gelisteten Marke verbunden, von ihnen unterstützt oder gesponsert.",
+          thirdParty: "Diese Landingpage bewirbt einen inoffiziellen Drittanbieter-Service für geteilte Abonnements.",
+          terms: "Nutzungsbedingungen",
+          refund: "Rückerstattungsrichtlinie",
+          savePrefix: "Sparen",
+          viewed: "angesehen",
+          get: "Erhalten",
+          saveAmount: "Sparen",
+          dealsUnavailable: "Angebote sind vorübergehend nicht verfügbar. Bitte aktualisieren Sie gleich erneut."
+        },
+        es: {
+          heroTitleLine1: "Suscripciones premium,",
+          heroTitleLine2: "por una fracción del costo.",
+          heroSubline: "Planes premium compartidos con activación rápida, precios claros y protección DealShield.",
+          heroUrgency: "Actualizado ahora · Ofertas limitadas disponibles",
+          shieldBadge: "Protección DealShield",
+          trustBar: "12k+ usuarios",
+          viewAll: "Ver todas las ofertas en GamsGo →",
+          benefitLow: "Precio bajo",
+          benefitGenuine: "Genuino",
+          benefitInstant: "Instantáneo",
+          benefitGuaranteed: "Garantizado",
+          trustTitle: "Pago protegido para ofertas de suscripciones compartidas",
+          trustBody: "Los pedidos elegibles incluyen una vía práctica de soporte para problemas de acceso o entrega.",
+          reviewOne: "\"Configuración rápida y precio claro.\"",
+          reviewTwo: "\"DealShield hizo que el pedido se sintiera más seguro.\"",
+          reviewThree: "\"Instrucciones fáciles después del pago.\"",
+          faqTitle: "Preguntas frecuentes",
+          faqOneQ: "¿GamsGo es Netflix o YouTube oficial?",
+          faqOneA: "No. GamsGo es un servicio intermediario independiente de terceros y no está afiliado a las marcas listadas.",
+          faqTwoQ: "¿Cuándo empieza el acceso?",
+          faqTwoA: "La mayoría de las ofertas proporcionan instrucciones poco después del pago. El momento exacto puede variar según el vendedor y el plan.",
+          faqThreeQ: "¿Qué pasa si el plan deja de funcionar?",
+          faqThreeA: "Use los canales de soporte y política de reembolso de GamsGo. DealShield se aplica a pedidos elegibles según los términos publicados.",
+          disclaimer: "GamsGo es un servicio intermediario independiente de terceros. No está afiliado oficialmente, respaldado ni patrocinado por Netflix, YouTube ni ninguna marca listada.",
+          thirdParty: "Esta página promociona un servicio no oficial de terceros para suscripciones compartidas.",
+          terms: "Términos de servicio",
+          refund: "Política de reembolso",
+          savePrefix: "Ahorra",
+          viewed: "vistas",
+          get: "Obtener",
+          saveAmount: "Ahorra",
+          dealsUnavailable: "Las ofertas no están disponibles temporalmente. Actualiza de nuevo en un momento."
+        },
+        pt: {
+          heroTitleLine1: "Assinaturas premium,",
+          heroTitleLine2: "por uma fração do custo.",
+          heroSubline: "Planos premium compartilhados com ativação rápida, preços claros e proteção DealShield.",
+          heroUrgency: "Atualizado agora · Ofertas limitadas disponíveis",
+          shieldBadge: "Proteção DealShield",
+          trustBar: "12k+ usuários",
+          viewAll: "Ver todas as ofertas no GamsGo →",
+          benefitLow: "Preço baixo",
+          benefitGenuine: "Genuíno",
+          benefitInstant: "Instantâneo",
+          benefitGuaranteed: "Garantido",
+          trustTitle: "Checkout protegido para ofertas de assinaturas compartilhadas",
+          trustBody: "Pedidos elegíveis incluem um caminho prático de suporte para problemas de acesso ou entrega.",
+          reviewOne: "\"Ativação rápida e preço claro.\"",
+          reviewTwo: "\"O DealShield deixou o pedido mais seguro.\"",
+          reviewThree: "\"Instruções fáceis após o checkout.\"",
+          faqTitle: "Perguntas frequentes",
+          faqOneQ: "A GamsGo é Netflix ou YouTube oficial?",
+          faqOneA: "Não. A GamsGo é um serviço intermediário independente de terceiros e não é afiliada às marcas listadas.",
+          faqTwoQ: "Quando o acesso começa?",
+          faqTwoA: "A maioria das ofertas envia instruções pouco depois do checkout. O prazo exato pode variar conforme o vendedor e o plano.",
+          faqThreeQ: "E se o plano parar de funcionar?",
+          faqThreeA: "Use os canais de suporte e política de reembolso da GamsGo. O DealShield se aplica a pedidos elegíveis conforme os termos publicados.",
+          disclaimer: "A GamsGo é um serviço intermediário independente de terceiros. Não é oficialmente afiliada, endossada nem patrocinada por Netflix, YouTube ou qualquer marca listada.",
+          thirdParty: "Esta landing page promove um serviço não oficial de terceiros para assinaturas compartilhadas.",
+          terms: "Termos de Serviço",
+          refund: "Política de Reembolso",
+          savePrefix: "Economize",
+          viewed: "visualizações",
+          get: "Obter",
+          saveAmount: "Economize",
+          dealsUnavailable: "As ofertas estão temporariamente indisponíveis. Atualize novamente em instantes."
+        },
+        it: {
+          heroTitleLine1: "Abbonamenti premium,",
+          heroTitleLine2: "a una frazione del costo.",
+          heroSubline: "Piani premium condivisi con configurazione rapida, prezzi chiari e protezione DealShield.",
+          heroUrgency: "Aggiornato ora · Offerte limitate disponibili",
+          shieldBadge: "Protezione DealShield",
+          trustBar: "12k+ utenti",
+          viewAll: "Vedi tutte le offerte su GamsGo →",
+          benefitLow: "Prezzo basso",
+          benefitGenuine: "Autentico",
+          benefitInstant: "Immediato",
+          benefitGuaranteed: "Garantito",
+          trustTitle: "Checkout protetto per offerte di abbonamenti condivisi",
+          trustBody: "Gli ordini idonei includono un percorso di supporto pratico per problemi di accesso o consegna.",
+          reviewOne: "\"Configurazione veloce e prezzo chiaro.\"",
+          reviewTwo: "\"DealShield ha reso l'ordine più sicuro.\"",
+          reviewThree: "\"Istruzioni semplici dopo il checkout.\"",
+          faqTitle: "FAQ",
+          faqOneQ: "GamsGo è Netflix o YouTube ufficiale?",
+          faqOneA: "No. GamsGo è un servizio intermediario indipendente di terze parti e non è affiliato ai brand elencati.",
+          faqTwoQ: "Quando inizia l'accesso?",
+          faqTwoA: "La maggior parte delle offerte fornisce istruzioni poco dopo il checkout. I tempi esatti possono variare in base al venditore e al piano.",
+          faqThreeQ: "Cosa succede se il piano smette di funzionare?",
+          faqThreeA: "Usa i canali di supporto e rimborso di GamsGo. DealShield si applica agli ordini idonei secondo i termini pubblicati.",
+          disclaimer: "GamsGo è un servizio intermediario indipendente di terze parti. Non è ufficialmente affiliato, approvato o sponsorizzato da Netflix, YouTube o da qualsiasi brand elencato.",
+          thirdParty: "Questa landing page promuove un servizio non ufficiale di terze parti per abbonamenti condivisi.",
+          terms: "Termini di servizio",
+          refund: "Politica di rimborso",
+          savePrefix: "Risparmia",
+          viewed: "visualizzazioni",
+          get: "Ottieni",
+          saveAmount: "Risparmia",
+          dealsUnavailable: "Le offerte sono temporaneamente non disponibili. Aggiorna di nuovo tra poco."
+        },
+        ko: {
+          heroTitleLine1: "프리미엄 구독을,",
+          heroTitleLine2: "훨씬 합리적인 가격으로.",
+          heroSubline: "빠른 설정, 명확한 가격, DealShield 보호가 포함된 공유 프리미엄 플랜입니다.",
+          heroUrgency: "방금 업데이트됨 · 한정 특가 진행 중",
+          shieldBadge: "DealShield 보호",
+          trustBar: "12k+ 사용자",
+          viewAll: "GamsGo에서 모든 특가 보기 →",
+          benefitLow: "낮은 가격",
+          benefitGenuine: "정품",
+          benefitInstant: "즉시",
+          benefitGuaranteed: "보장",
+          trustTitle: "공유 구독 특가를 위한 보호 결제",
+          trustBody: "대상 주문에는 접속 또는 배송 문제를 위한 실용적인 지원 경로가 포함됩니다.",
+          reviewOne: "\"설정이 빠르고 가격이 명확했어요.\"",
+          reviewTwo: "\"DealShield 덕분에 주문이 더 안심됐어요.\"",
+          reviewThree: "\"결제 후 안내가 쉬웠어요.\"",
+          faqTitle: "자주 묻는 질문",
+          faqOneQ: "GamsGo는 Netflix 또는 YouTube 공식 서비스인가요?",
+          faqOneA: "아니요. GamsGo는 독립적인 제3자 중개 서비스이며 표시된 브랜드와 제휴되어 있지 않습니다.",
+          faqTwoQ: "언제부터 이용할 수 있나요?",
+          faqTwoA: "대부분의 특가는 결제 직후 안내를 제공합니다. 정확한 시간은 판매자와 플랜에 따라 달라질 수 있습니다.",
+          faqThreeQ: "플랜이 작동하지 않으면 어떻게 하나요?",
+          faqThreeA: "GamsGo 지원 및 환불 정책 채널을 이용하세요. DealShield는 게시된 약관에 따라 대상 주문에 적용됩니다.",
+          disclaimer: "GamsGo는 독립적인 제3자 중개 서비스입니다. Netflix, YouTube 또는 표시된 어떤 브랜드와도 공식 제휴, 보증, 후원 관계가 없습니다.",
+          thirdParty: "이 랜딩 페이지는 비공식 제3자 공유 구독 서비스를 홍보합니다.",
+          terms: "서비스 약관",
+          refund: "환불 정책",
+          savePrefix: "절약",
+          viewed: "명이 봄",
+          get: "구매",
+          saveAmount: "절약",
+          dealsUnavailable: "현재 특가를 일시적으로 사용할 수 없습니다. 잠시 후 새로고침해 주세요."
+        },
+        ar: {
+          heroTitleLine1: "اشتراكات مميزة،",
+          heroTitleLine2: "بجزء من التكلفة.",
+          heroSubline: "خطط مميزة مشتركة مع إعداد سريع وأسعار واضحة وحماية DealShield.",
+          heroUrgency: "تم التحديث الآن · عروض محدودة متاحة",
+          shieldBadge: "حماية DealShield",
+          trustBar: "أكثر من 12 ألف مستخدم",
+          viewAll: "عرض كل العروض على GamsGo →",
+          benefitLow: "سعر منخفض",
+          benefitGenuine: "أصلي",
+          benefitInstant: "فوري",
+          benefitGuaranteed: "مضمون",
+          trustTitle: "دفع محمي لعروض الاشتراكات المشتركة",
+          trustBody: "تشمل الطلبات المؤهلة مسار دعم عملي لمشكلات الوصول أو التسليم.",
+          reviewOne: "\"إعداد سريع وكان السعر واضحا.\"",
+          reviewTwo: "\"جعلت DealShield الطلب أكثر اطمئنانا.\"",
+          reviewThree: "\"تعليمات سهلة بعد الدفع.\"",
+          faqTitle: "الأسئلة الشائعة",
+          faqOneQ: "هل GamsGo خدمة Netflix أو YouTube رسمية؟",
+          faqOneA: "لا. GamsGo خدمة وسيطة مستقلة من طرف ثالث وليست تابعة للعلامات التجارية المدرجة.",
+          faqTwoQ: "متى يبدأ الوصول؟",
+          faqTwoA: "توفر معظم العروض التعليمات بعد الدفع بوقت قصير. قد يختلف التوقيت الدقيق حسب البائع والخطة.",
+          faqThreeQ: "ماذا لو توقفت الخطة عن العمل؟",
+          faqThreeA: "استخدم قنوات دعم GamsGo وسياسة الاسترداد. تنطبق DealShield على الطلبات المؤهلة وفق الشروط المنشورة.",
+          disclaimer: "GamsGo خدمة وسيطة مستقلة من طرف ثالث. ليست تابعة رسميا أو معتمدة أو برعاية Netflix أو YouTube أو أي علامة تجارية مدرجة.",
+          thirdParty: "تروج هذه الصفحة لخدمة اشتراكات مشتركة غير رسمية من طرف ثالث.",
+          terms: "شروط الخدمة",
+          refund: "سياسة الاسترداد",
+          savePrefix: "وفر",
+          viewed: "مشاهدة",
+          get: "احصل على",
+          saveAmount: "وفر",
+          dealsUnavailable: "العروض غير متاحة مؤقتا. يرجى التحديث بعد قليل."
+        }
+      };
+
+      const CAMPAIGN_ID = "GG_Suppliers_260604";
+      const PROMOTE_CODE = "Z3UNq";
+      const PRICE_API_URL = "https://mapi.gamsgo2.com/index/planDetail";
+      const SERVICE_ACCOUNT_LINKS = {
+        Netflix: "https://www.gamsgo.com/accounts/netflix",
+        YouTube: "https://www.gamsgo.com/accounts/yotube-subscription",
+        "Prime Video": "https://www.gamsgo.com/accounts/prime-video",
+        "Disney+": "https://www.gamsgo.com/accounts/disney",
+        Gemini: "https://www.gamsgo.com/accounts/gemini",
+        DAZN: "https://www.gamsgo.com/accounts/dazn",
+        Runway: "https://www.gamsgo.com/accounts/runway",
+        Xbox: "https://www.gamsgo.com/accounts/xbox"
+      };
+      let PRICE_STATE = new Map();
+      let MERCHANT_STATE = new Map();
+      let activeLocale = "en";
+      let activeServiceFilter = "";
+      window.dataLayer = window.dataLayer || [];
+      function gtag() {
+        window.dataLayer.push(arguments);
+      }
+
+      gtag("js", new Date());
+      gtag("event", "page_view", {
+        page_title: document.title,
+        page_location: window.location.href
+      });
+
+      function productKey(product, index) {
+        return `${product.sku}:${product.offerId}:${index}`;
+      }
+
+      function shuffleProducts(products) {
+        const shuffled = [...products];
+
+        for (let index = shuffled.length - 1; index > 0; index -= 1) {
+          const randomIndex = Math.floor(Math.random() * (index + 1));
+          [shuffled[index], shuffled[randomIndex]] = [shuffled[randomIndex], shuffled[index]];
+        }
+
+        return shuffled;
+      }
+
+      function productTier(product) {
+        const firstTier = ["Netflix", "YouTube", "Prime Video"];
+        const secondTier = ["Disney+", "Gemini", "DAZN"];
+
+        if (firstTier.includes(product.service)) {
+          return 1;
+        }
+
+        if (secondTier.includes(product.service)) {
+          return 2;
+        }
+
+        return 3;
+      }
+
+      function tieredShuffleProducts(products) {
+        return [1, 2, 3].flatMap((tier) => shuffleProducts(products.filter((product) => productTier(product) === tier)));
+      }
+
+      async function loadProductConfig() {
+        const response = await fetch(PRODUCT_CONFIG_URL);
+
+        if (!response.ok) {
+          throw new Error(`Product config failed: ${response.status}`);
+        }
+
+        PRODUCTS = tieredShuffleProducts(await response.json());
+        PRICE_STATE = new Map(PRODUCTS.map((product, index) => [productKey(product, index), product.price]));
+        MERCHANT_STATE = new Map(PRODUCTS.map((product, index) => [productKey(product, index), {
+          rating: sellerRating(index),
+          orders: sellerOrders(index)
+        }]));
+      }
+
+      function money(value) {
+        return new Intl.NumberFormat("en-US", {
+          style: "currency",
+          currency: "USD",
+          minimumFractionDigits: 2
+        }).format(Number(value) || 0);
+      }
+
+      function savingsPercent(product, price) {
+        if (!product.official || !price) {
+          return 0;
+        }
+        return Math.max(0, Math.round((1 - Number(price) / Number(product.official)) * 100));
+      }
+
+      function saveDollars(product, price) {
+        return Math.max(0, Number(product.official) - Number(price));
+      }
+
+      function viewedCount(index, timestamp = Date.now()) {
+        const launchDay = Math.floor(Date.UTC(2026, 5, 1) / 86400000);
+        const currentDay = Math.floor(timestamp / 86400000);
+        const daysSinceLaunch = Math.max(0, currentDay - launchDay);
+        const base = 43 + ((index * 29 + 11) % 74);
+        const slowGrowth = Math.floor(daysSinceLaunch / 3);
+        const staggeredGrowth = Math.floor((daysSinceLaunch + index * 2) / 11);
+
+        return base + slowGrowth + staggeredGrowth;
+      }
+
+      function sellerRating(index) {
+        return (4.7 + ((index * 7 + 3) % 3) / 10).toFixed(1);
+      }
+
+      function sellerOrders(index, timestamp = Date.now()) {
+        const launchDay = Math.floor(Date.UTC(2026, 5, 1) / 86400000);
+        const currentDay = Math.floor(timestamp / 86400000);
+        const daysSinceLaunch = Math.max(0, currentDay - launchDay);
+        const base = 180 + ((index * 137 + 59) % 820);
+
+        return base + daysSinceLaunch * (3 + (index % 4));
+      }
+
+      function ratingFromCommentRate(rate) {
+        const percent = Number(String(rate || "").replace("%", ""));
+
+        if (!Number.isFinite(percent) || percent <= 0) {
+          return "";
+        }
+
+        const stars = Math.max(0, Math.min(5, percent / 20));
+        return stars.toFixed(1);
+      }
+
+      function compactCount(value) {
+        const count = Number(String(value || "").replace(/,/g, ""));
+
+        if (!Number.isFinite(count) || count <= 0) {
+          return "";
+        }
+
+        if (count >= 1000000) {
+          return `${(count / 1000000).toFixed(count >= 10000000 ? 0 : 1).replace(".0", "")}m`;
+        }
+
+        if (count >= 1000) {
+          return `${(count / 1000).toFixed(count >= 10000 ? 0 : 1).replace(".0", "")}k`;
+        }
+
+        return String(Math.round(count));
+      }
+
+      function getLocaleMeta(locale = activeLocale) {
+        return LOCALES.find((item) => item.code === locale) || LOCALES[0];
+      }
+
+      function t(key) {
+        return (COPY[activeLocale] && COPY[activeLocale][key]) || COPY.en[key] || "";
+      }
+
+      function filterAllLabel() {
+        const labels = {
+          en: "All",
+          fr: "Tous",
+          de: "Alle",
+          es: "Todos",
+          pt: "Todos",
+          it: "Tutti",
+          ko: "전체",
+          ar: "الكل"
+        };
+
+        return labels[activeLocale] || labels.en;
+      }
+
+      function getStoredLocale() {
+        try {
+          return localStorage.getItem("gamsgo-locale");
+        } catch (error) {
+          return "";
+        }
+      }
+
+      function storeLocale(locale) {
+        try {
+          localStorage.setItem("gamsgo-locale", locale);
+        } catch (error) {
+          // Language switching should still work when storage is unavailable.
+        }
+      }
+
+      function initials(name) {
+        return name
+          .split(/\s+/)
+          .filter(Boolean)
+          .slice(0, 2)
+          .map((part) => part[0])
+          .join("")
+          .toUpperCase();
+      }
+
+      function localizedGamsGoUrl(baseUrl) {
+        const url = new URL(baseUrl, window.location.href);
+        const supportedPathLocales = [...LOCALES.map((locale) => locale.code), "zh"];
+        const pathParts = url.pathname.split("/").filter(Boolean);
+
+        if (supportedPathLocales.includes(pathParts[0])) {
+          pathParts.shift();
+        }
+
+        if (activeLocale === "it") {
+          url.hostname = "www.gamsgo.it";
+          url.pathname = `/${pathParts.join("/")}`;
+          return url;
+        }
+
+        url.pathname = `/${activeLocale === "en" ? "" : `${activeLocale}/`}${pathParts.join("/")}`;
+        return url;
+      }
+
+      function withLandingParams(url) {
+        url.searchParams.set("utm_source", "google");
+        url.searchParams.set("utm_medium", "cpc");
+        url.searchParams.set("utm_campaign", CAMPAIGN_ID);
+        url.searchParams.set("promote", PROMOTE_CODE);
+        url.searchParams.delete("utm_content");
+        url.searchParams.delete("utm_term");
+        return url.toString();
+      }
+
+      function withUtm(baseUrl) {
+        const url = localizedGamsGoUrl(baseUrl);
+        return withLandingParams(url);
+      }
+
+      function withGeneralUtm(baseUrl) {
+        const url = localizedGamsGoUrl(baseUrl);
+        return withLandingParams(url);
+      }
+
+      function renderCard(product, index) {
+        const key = productKey(product, index);
+        const price = PRICE_STATE.get(key) || product.price;
+        const merchantStats = MERCHANT_STATE.get(key) || { rating: sellerRating(index), orders: sellerOrders(index) };
+        const localizedProduct = product.i18n && product.i18n[activeLocale] ? product.i18n[activeLocale] : {};
+        const titleLine = localizedProduct.displayTitle || product.displayTitle || product.title;
+        const subtitleLine = localizedProduct.displaySubtitle || product.displaySubtitle || product.period;
+
+        return `
+          <a
+            class="deal-card flex h-auto w-full flex-col overflow-hidden rounded-2xl border border-gray-200/70 bg-white p-1.5 text-ink shadow-[0_2px_10px_rgba(17,24,39,0.045)] transition duration-200 active:scale-[0.99] hover:-translate-y-0.5 hover:border-gray-300 hover:shadow-[0_12px_26px_rgba(17,24,39,0.09)] sm:p-2"
+            href="${withUtm(product.link)}"
+            data-index="${index}"
+            data-sku="${product.sku}"
+            data-offer-id="${product.offerId}"
+            data-type-plan-id="${product.typePlanId}"
+          >
+            <div class="product-art overflow-hidden rounded-lg">
+              <img src="${product.image}" width="320" height="320" alt="${product.service} shared subscription deal illustration" class="mx-auto h-full w-auto max-w-full object-contain" loading="lazy">
+              <div class="absolute inset-x-0 bottom-0 h-10 bg-gradient-to-t from-black/20 to-transparent" aria-hidden="true"></div>
+              <div class="absolute left-1.5 top-1.5 rounded-full bg-white/92 px-1.5 py-0.5 text-[9px] font-bold text-muted shadow-sm">${product.service}</div>
+              <div class="absolute right-1.5 top-1.5 rounded-full bg-[#10B981] px-2 py-0.5 text-[9px] font-bold text-white shadow-sm">${t("savePrefix")} ${savingsPercent(product, price)}%</div>
+            </div>
+            <div class="flex flex-col gap-1.5 p-2 sm:p-2.5">
+              <h2 class="line-clamp-2 text-[11px] font-bold leading-[15px] text-ink md:text-[12px] md:leading-4">
+                <span class="block truncate">${titleLine}</span>
+                <span class="deal-subtitle subtitle-clamp">${subtitleLine}</span>
+              </h2>
+              <div class="flex min-w-0 items-baseline gap-1">
+                <span class="price-value text-[15px] font-extrabold leading-none text-brand md:text-base" data-price-key="${key}">${money(price)}</span>
+                <span class="truncate text-[10px] font-medium text-muted line-through">${money(product.official)}</span>
+              </div>
+              <div class="mt-0.5 flex min-w-0 items-center justify-between gap-1 border-t border-gray-100 pt-1.5">
+                <div class="flex min-w-0 items-center gap-1">
+                  <span class="flex h-4 w-4 shrink-0 items-center justify-center rounded-full bg-gray-100 text-[7px] font-bold text-muted">${initials(product.seller)}</span>
+                  <span class="max-w-[50px] truncate text-[9px] font-medium text-muted sm:max-w-[58px] md:max-w-[62px]">${product.seller}</span>
+                </div>
+                <span class="shrink-0 text-[8px] font-semibold text-muted sm:text-[9px]">${merchantStats.rating}★ · ${compactCount(merchantStats.orders)} sold</span>
+              </div>
+              <div class="sr-only">${t("get")} ${money(price)}. ${t("saveAmount")} ${money(saveDollars(product, price))}.</div>
+            </div>
+          </a>
+        `;
+      }
+
+      function renderServiceAccountCard(service) {
+        const accountLink = SERVICE_ACCOUNT_LINKS[service];
+
+        if (!accountLink) {
+          return "";
+        }
+
+        const serviceSlug = service.toLowerCase().replace(/\W+/g, "-").replace(/^-|-$/g, "");
+
+        return `
+          <a
+            class="service-account-card flex min-h-full w-full flex-col justify-between overflow-hidden rounded-2xl border border-dashed border-brand/30 bg-white p-1.5 text-ink shadow-[0_2px_10px_rgba(17,24,39,0.035)] transition duration-200 active:scale-[0.99] hover:-translate-y-0.5 hover:border-brand/60 hover:shadow-[0_12px_26px_rgba(17,24,39,0.08)] sm:p-2"
+            href="${withGeneralUtm(accountLink)}"
+            data-service-account="${service}"
+          >
+            <div class="flex aspect-[16/9] flex-col justify-between rounded-lg bg-sectionAlt p-2.5">
+              <div class="flex items-center justify-between gap-2">
+                <span class="rounded-full bg-white px-2 py-0.5 text-[9px] font-bold text-muted shadow-sm">${service}</span>
+                <span class="flex h-6 w-6 items-center justify-center rounded-full bg-brand text-sm font-bold leading-none text-white" aria-hidden="true">→</span>
+              </div>
+              <div>
+                <div class="text-[16px] font-extrabold leading-tight text-brand md:text-[17px]">More deals</div>
+                <div class="mt-0.5 text-[10px] font-semibold leading-4 text-muted">All ${service} plans</div>
+              </div>
+            </div>
+            <div class="flex flex-1 flex-col justify-between gap-2 p-2 sm:p-2.5">
+              <div>
+                <div class="text-[11px] font-bold leading-4 text-ink md:text-[12px]">Browse all ${service} offers</div>
+                <div class="mt-1 text-[10px] font-semibold leading-4 text-muted">Open the full GamsGo category page.</div>
+              </div>
+              <div class="border-t border-gray-100 pt-2 text-[10px] font-bold text-brand">View category →</div>
+            </div>
+          </a>
+        `;
+      }
+
+      function renderProductGrid() {
+        const grid = document.getElementById("product-grid");
+        grid.innerHTML = "";
+
+        PRODUCTS.forEach((product, index) => {
+          if (activeServiceFilter && product.service !== activeServiceFilter) {
+            return;
+          }
+
+          const wrapper = document.createElement("div");
+          wrapper.innerHTML = renderCard(product, index);
+          grid.appendChild(wrapper.firstElementChild);
+        });
+
+        bindCardEvents();
+      }
+
+      function renderServiceFilters() {
+        const filterContainer = document.getElementById("service-filters");
+
+        if (!filterContainer || PRODUCTS.length === 0) {
+          return;
+        }
+
+        const serviceOrder = ["Netflix", "YouTube", "Prime Video", "Disney+", "Gemini", "DAZN"];
+        const availableServices = new Set(PRODUCTS.map((product) => product.service));
+        const services = [
+          ...serviceOrder.filter((service) => availableServices.has(service)),
+          ...[...availableServices].filter((service) => !serviceOrder.includes(service))
+        ];
+        const filters = [{ label: filterAllLabel(), service: "" }, ...services.map((service) => ({ label: service, service }))];
+
+        filterContainer.innerHTML = filters.map((filter) => {
+          const isActive = filter.service === activeServiceFilter;
+          const stateClasses = isActive ? "border-brand bg-brand text-white shadow-sm hover:text-white" : "border-gray-200 bg-white text-muted shadow-sm hover:border-brand hover:text-brand";
+
+          return `
+            <button
+              type="button"
+              class="min-h-7 rounded-full border px-2.5 py-0.5 text-[10px] font-bold leading-4 transition md:min-h-7 md:px-3 md:text-[11px] ${stateClasses}"
+              aria-pressed="${isActive}"
+              data-service-filter="${filter.service}"
+            >${filter.label}</button>
+          `;
+        }).join("");
+
+        filterContainer.querySelectorAll("[data-service-filter]").forEach((button) => {
+          button.addEventListener("click", () => {
+            activeServiceFilter = button.dataset.serviceFilter || "";
+            renderServiceFilters();
+            renderProductGrid();
+            updateViewAllLink();
+          });
+        });
+      }
+
+      function trackCta(product) {
+        gtag("event", "cta_click", {
+          sku: product.sku,
+          offer_id: product.offerId,
+          event_category: "outbound",
+          event_label: `${product.sku}:${product.offerId}`
+        });
+      }
+
+      function bindCardEvents() {
+        document.querySelectorAll(".deal-card").forEach((card) => {
+          card.addEventListener("click", () => {
+            const index = Number(card.dataset.index);
+            trackCta(PRODUCTS[index]);
+          });
+        });
+      }
+
+      async function fetchPlanDetail(product) {
+        const localeMeta = getLocaleMeta();
+        const response = await fetch(PRICE_API_URL, {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({
+            language: localeMeta.apiLanguage,
+            show_currency: "USD",
+            type_plan_id: product.typePlanId
+          })
+        });
+        const payload = await response.json();
+        return payload && payload.data ? payload.data : {};
+      }
+
+      async function loadLivePrices() {
+        await Promise.all(PRODUCTS.map(async (product, index) => {
+          const key = productKey(product, index);
+          try {
+            const planDetail = await fetchPlanDetail(product);
+            const livePrice = Number(planDetail.total_price);
+            const rating = ratingFromCommentRate(planDetail.merchant_comment_rate);
+            const orders = compactCount(planDetail.merchant_comment_num) ? Number(String(planDetail.merchant_comment_num).replace(/,/g, "")) : "";
+
+            if (Number.isFinite(livePrice) && livePrice > 0) {
+              PRICE_STATE.set(key, livePrice);
+            }
+            if (rating && orders) {
+              MERCHANT_STATE.set(key, {
+                rating,
+                orders
+              });
+            }
+          } catch (error) {
+            PRICE_STATE.set(key, product.price);
+          }
+        }));
+
+        renderProductGrid();
+      }
+
+      function setLanguage(locale) {
+        const nextLocale = COPY[locale] ? locale : "en";
+        const copy = COPY[nextLocale] || COPY.en;
+        const localeMeta = getLocaleMeta(nextLocale);
+        activeLocale = nextLocale;
+        document.documentElement.lang = nextLocale;
+        document.documentElement.dir = localeMeta.dir;
+        document.getElementById("current-language-label").textContent = localeMeta.label;
+        storeLocale(nextLocale);
+        document.querySelectorAll("[data-i18n]").forEach((element) => {
+          const value = copy[element.dataset.i18n];
+          if (value) {
+            element.textContent = value;
+          }
+        });
+        document.querySelectorAll("[data-language-option]").forEach((option) => {
+          const isActive = option.dataset.languageOption === nextLocale;
+          option.setAttribute("aria-checked", String(isActive));
+          option.classList.toggle("bg-sectionAlt", isActive);
+          option.classList.toggle("text-brand", isActive);
+        });
+        updateGeneralOutboundLinks();
+        renderServiceFilters();
+        renderProductGrid();
+      }
+
+      function getInitialLocale() {
+        const storedLocale = getStoredLocale();
+        if (COPY[storedLocale]) {
+          return storedLocale;
+        }
+
+        const browserLocale = (navigator.language || "en").toLowerCase().split("-")[0];
+        return COPY[browserLocale] ? browserLocale : "en";
+      }
+
+      function renderLanguageMenu() {
+        const menu = document.getElementById("language-menu");
+        menu.innerHTML = LOCALES.map((locale) => `
+          <button
+            type="button"
+            class="flex min-h-10 w-full items-center px-3 text-left hover:bg-gray-50"
+            role="menuitemradio"
+            aria-checked="${locale.code === activeLocale}"
+            data-language-option="${locale.code}"
+          >${locale.label}</button>
+        `).join("");
+
+        menu.querySelectorAll("[data-language-option]").forEach((option) => {
+          option.addEventListener("click", () => {
+            setLanguage(option.dataset.languageOption);
+            closeLanguageMenu();
+          });
+        });
+      }
+
+      function closeLanguageMenu() {
+        const menu = document.getElementById("language-menu");
+        const toggle = document.getElementById("language-toggle");
+        menu.classList.add("hidden");
+        toggle.setAttribute("aria-expanded", "false");
+      }
+
+      function toggleLanguageMenu() {
+        const menu = document.getElementById("language-menu");
+        const toggle = document.getElementById("language-toggle");
+        const willOpen = menu.classList.contains("hidden");
+        menu.classList.toggle("hidden", !willOpen);
+        toggle.setAttribute("aria-expanded", String(willOpen));
+      }
+
+      function serviceSlug(service) {
+        return service.toLowerCase().replace(/\W+/g, "-").replace(/^-|-$/g, "");
+      }
+
+      function updateViewAllLink() {
+        const link = document.querySelector('[data-i18n="viewAll"]');
+
+        if (!link) {
+          return;
+        }
+
+        if (activeServiceFilter && SERVICE_ACCOUNT_LINKS[activeServiceFilter]) {
+          link.href = withGeneralUtm(SERVICE_ACCOUNT_LINKS[activeServiceFilter]);
+          link.textContent = `View all ${activeServiceFilter} deals on GamsGo →`;
+          return;
+        }
+
+        link.href = withGeneralUtm("https://www.gamsgo.com/?category_id=marketplace");
+        link.textContent = t("viewAll");
+      }
+
+      function updateGeneralOutboundLinks() {
+        document.querySelectorAll('a[href^="https://www.gamsgo.com"]').forEach((link) => {
+          if (link.classList.contains("deal-card")) {
+            return;
+          }
+
+          if (link.dataset.i18n === "viewAll") {
+            return;
+          }
+
+          const baseHref = link.dataset.baseHref || link.getAttribute("href");
+          link.dataset.baseHref = baseHref;
+          link.href = withGeneralUtm(baseHref);
+        });
+
+        updateViewAllLink();
+      }
+
+      document.addEventListener("DOMContentLoaded", async () => {
+        activeLocale = getInitialLocale();
+        renderLanguageMenu();
+        setLanguage(activeLocale);
+
+        try {
+          await loadProductConfig();
+          renderServiceFilters();
+          renderProductGrid();
+          loadLivePrices();
+        } catch (error) {
+          document.getElementById("product-grid").innerHTML = `<p class="col-span-2 rounded-lg border border-gray-100 bg-white p-4 text-xs text-muted md:col-span-4">${t("dealsUnavailable")}</p>`;
+        }
+
+        document.getElementById("language-toggle").addEventListener("click", () => {
+          toggleLanguageMenu();
+        });
+
+        document.addEventListener("click", (event) => {
+          if (event.target instanceof Element && !event.target.closest("#language-toggle") && !event.target.closest("#language-menu")) {
+            closeLanguageMenu();
+          }
+        });
+
+      });
+    </script>
+  </body>
+</html>
