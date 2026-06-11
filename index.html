@@ -6,6 +6,7 @@
     <meta name="description" content="Dense GamsGo deal board for independent third-party shared-subscription offers with DealShield protection.">
     <meta name="robots" content="noindex, nofollow">
     <title>GamsGo | Premium Subscriptions for Less</title>
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-RHTFQ2S7NR"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
@@ -590,6 +591,7 @@
 
       const CAMPAIGN_ID = "GG_Suppliers_260604";
       const PROMOTE_CODE = "Z3UNq";
+      const GA_MEASUREMENT_ID = "G-RHTFQ2S7NR";
       const PRICE_API_URL = "https://mapi.gamsgo2.com/index/planDetail";
       const SERVICE_ACCOUNT_LINKS = {
         Netflix: "https://www.gamsgo.com/accounts/netflix",
@@ -611,6 +613,7 @@
       }
 
       gtag("js", new Date());
+      gtag("config", GA_MEASUREMENT_ID, { send_page_view: false });
       gtag("event", "page_view", {
         page_title: document.title,
         page_location: window.location.href
