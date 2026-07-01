@@ -623,6 +623,16 @@
         return `${product.sku}:${product.offerId}:${index}`;
       }
 
+      function productMerchantStats(product, index) {
+        const localRating = product.merchantRating || ratingFromCommentRate(product.merchantCommentRate);
+        const localOrders = Number(String(product.merchantOrders || product.merchantCommentNum || "").replace(/,/g, ""));
+
+        return {
+          rating: localRating || sellerRating(index),
+          orders: Number.isFinite(localOrders) && localOrders > 0 ? localOrders : sellerOrders(index)
+        };
+      }
+
       function shuffleProducts(products) {
         const shuffled = [...products];
 
@@ -662,10 +672,7 @@
 
         PRODUCTS = tieredShuffleProducts(await response.json());
         PRICE_STATE = new Map(PRODUCTS.map((product, index) => [productKey(product, index), product.price]));
-        MERCHANT_STATE = new Map(PRODUCTS.map((product, index) => [productKey(product, index), {
-          rating: sellerRating(index),
-          orders: sellerOrders(index)
-        }]));
+        MERCHANT_STATE = new Map(PRODUCTS.map((product, index) => [productKey(product, index), productMerchantStats(product, index)]));
       }
 
       function money(value) {
