@@ -1,52 +1,5 @@
 [
   {
-    "sku": "claude-pro-1m",
-    "offerId": "signup-claude-1",
-    "title": "Claude PRO 1 Month Shared Account",
-    "displayTitle": "Claude Pro - 1 Month",
-    "displaySubtitle": "Shared Claude Pro access with instant delivery",
-    "seller": "GamingHall",
-    "service": "Claude",
-    "image": "assets/dc2c5921-8522-4f97-a373-5aac9e24750d.webp",
-    "price": 6.79,
-    "official": 20,
-    "period": "mo",
-    "link": "https://www.gamsgo.com/shop/b0814844-c012-e9f2-ae26-e2141857d127",
-    "typePlanId": "b0814844-c012-e9f2-ae26-e2141857d127",
-    "i18n": {
-      "fr": {
-        "displayTitle": "Claude Pro - 1 mois",
-        "displaySubtitle": "Acces Claude Pro partage avec livraison instantanee"
-      },
-      "de": {
-        "displayTitle": "Claude Pro - 1 Monat",
-        "displaySubtitle": "Geteilter Claude-Pro-Zugang mit sofortiger Lieferung"
-      },
-      "es": {
-        "displayTitle": "Claude Pro - 1 mes",
-        "displaySubtitle": "Acceso compartido a Claude Pro con entrega instantanea"
-      },
-      "pt": {
-        "displayTitle": "Claude Pro - 1 mes",
-        "displaySubtitle": "Acesso compartilhado ao Claude Pro com entrega instantanea"
-      },
-      "it": {
-        "displayTitle": "Claude Pro - 1 mese",
-        "displaySubtitle": "Accesso condiviso a Claude Pro con consegna immediata"
-      },
-      "ko": {
-        "displayTitle": "Claude Pro - 1개월",
-        "displaySubtitle": "공유 Claude Pro 즉시 제공 이용권"
-      },
-      "ar": {
-        "displayTitle": "Claude Pro - شهر واحد",
-        "displaySubtitle": "وصول مشترك إلى Claude Pro مع تسليم فوري"
-      }
-    },
-    "merchantRating": "4.9",
-    "merchantOrders": 2964
-  },
-  {
     "sku": "youtube-3m-top-up",
     "offerId": "signup-youtube-topup-1",
     "title": "YouTube Premium 3 Months | Individual | No Login | Full Warranty",
@@ -235,51 +188,52 @@
     "merchantOrders": 3645
   },
   {
-    "sku": "netflix-3m",
-    "offerId": "signup-netflix-3m-1",
-    "title": "Netflix Premium 4K UHD | Access 3 Months | Warranty Included | Instant Delivery",
-    "displayTitle": "Netflix Premium 4K - 3 Months",
+    "sku": "netflix-1m",
+    "offerId": "signup-netflix-1m-1",
+    "title": "Netflix Premium 4K UHD | Access 1 Month | Warranty Included | Instant Delivery",
+    "displayTitle": "Netflix Premium 4K - 1 Month",
     "displaySubtitle": "Premium 4K access with warranty and instant delivery",
     "seller": "SafeAndCheap",
     "service": "Netflix",
-    "image": "assets/8c9f5e9a-4779-4695-b5b2-83cf74c7446c.webp",
-    "price": 9.11,
-    "official": 74.97,
-    "period": "3mo",
+    "image": "assets/91592389-2cd9-44f6-ac2f-c30606c66a8f.webp",
+    "price": 4.56,
+    "official": 24.99,
+    "period": "mo",
     "link": "https://www.gamsgo.com/shop/49ec49ca-8b19-0d98-9742-fae23c1ce627",
     "typePlanId": "49ec49ca-8b19-0d98-9742-fae23c1ce627",
     "i18n": {
       "fr": {
-        "displayTitle": "Netflix Premium 4K - 3 mois",
+        "displayTitle": "Netflix Premium 4K - 1 mois",
         "displaySubtitle": "Acces Premium 4K avec garantie et livraison instantanee"
       },
       "de": {
-        "displayTitle": "Netflix Premium 4K - 3 Monate",
+        "displayTitle": "Netflix Premium 4K - 1 Monat",
         "displaySubtitle": "Premium-4K-Zugang mit Garantie und Sofortlieferung"
       },
       "es": {
-        "displayTitle": "Netflix Premium 4K - 3 meses",
+        "displayTitle": "Netflix Premium 4K - 1 mes",
         "displaySubtitle": "Acceso Premium 4K con garantia y entrega instantanea"
       },
       "pt": {
-        "displayTitle": "Netflix Premium 4K - 3 meses",
+        "displayTitle": "Netflix Premium 4K - 1 mes",
         "displaySubtitle": "Acesso Premium 4K com garantia e entrega instantanea"
       },
       "it": {
-        "displayTitle": "Netflix Premium 4K - 3 mesi",
+        "displayTitle": "Netflix Premium 4K - 1 mese",
         "displaySubtitle": "Accesso Premium 4K con garanzia e consegna immediata"
       },
       "ko": {
-        "displayTitle": "Netflix Premium 4K - 3개월",
+        "displayTitle": "Netflix Premium 4K - 1개월",
         "displaySubtitle": "보증과 즉시 제공이 포함된 Premium 4K 이용권"
       },
       "ar": {
-        "displayTitle": "Netflix Premium 4K - 3 أشهر",
+        "displayTitle": "Netflix Premium 4K - شهر واحد",
         "displaySubtitle": "وصول Premium 4K مع ضمان وتسليم فوري"
       }
     },
     "merchantRating": "5.0",
-    "merchantOrders": 3645
+    "merchantOrders": 4111,
+    "inventoryQuantity": 9
   },
   {
     "sku": "movistar-plus-1m",
