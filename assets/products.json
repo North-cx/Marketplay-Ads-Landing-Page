@@ -143,11 +143,11 @@
   {
     "sku": "dazn-unlimited-3m",
     "offerId": "signup-dazn-1",
-    "title": "DAZN Unlimited Subscription | Access 3 Months | Warranty Included | Instant Delivery",
-    "displayTitle": "DAZN Unlimited - 3 Months",
+    "title": "DZN Unlimited Subscription | Access 3 Months | Warranty Included | Instant Delivery",
+    "displayTitle": "DZN Unlimited - 3 Months",
     "displaySubtitle": "Live sports access with warranty and instant delivery",
     "seller": "SafeAndCheap",
-    "service": "DAZN",
+    "service": "DZN",
     "image": "assets/a7b9146d-b6e2-4971-8caa-96a7f4514159.webp",
     "price": 9.97,
     "official": 89.97,
@@ -156,31 +156,31 @@
     "typePlanId": "5cbf4c4d-9433-2a0a-a2cc-68caca0b67c0",
     "i18n": {
       "fr": {
-        "displayTitle": "DAZN Unlimited - 3 mois",
+        "displayTitle": "DZN Unlimited - 3 mois",
         "displaySubtitle": "Acces aux sports en direct avec garantie et livraison instantanee"
       },
       "de": {
-        "displayTitle": "DAZN Unlimited - 3 Monate",
+        "displayTitle": "DZN Unlimited - 3 Monate",
         "displaySubtitle": "Live-Sport-Zugang mit Garantie und Sofortlieferung"
       },
       "es": {
-        "displayTitle": "DAZN Unlimited - 3 meses",
+        "displayTitle": "DZN Unlimited - 3 meses",
         "displaySubtitle": "Acceso a deportes en vivo con garantia y entrega instantanea"
       },
       "pt": {
-        "displayTitle": "DAZN Unlimited - 3 meses",
+        "displayTitle": "DZN Unlimited - 3 meses",
         "displaySubtitle": "Acesso a esportes ao vivo com garantia e entrega instantanea"
       },
       "it": {
-        "displayTitle": "DAZN Unlimited - 3 mesi",
+        "displayTitle": "DZN Unlimited - 3 mesi",
         "displaySubtitle": "Accesso sport live con garanzia e consegna immediata"
       },
       "ko": {
-        "displayTitle": "DAZN Unlimited - 3개월",
+        "displayTitle": "DZN Unlimited - 3개월",
         "displaySubtitle": "보증과 즉시 제공이 포함된 라이브 스포츠 이용권"
       },
       "ar": {
-        "displayTitle": "DAZN Unlimited - 3 أشهر",
+        "displayTitle": "DZN Unlimited - 3 أشهر",
         "displaySubtitle": "وصول إلى الرياضات المباشرة مع ضمان وتسليم فوري"
       }
     },
@@ -285,11 +285,11 @@
   {
     "sku": "dazn-family-3m",
     "offerId": "signup-dazn-family-1",
-    "title": "DAZN Family Subscription | Access 3 Months | Warranty Included | Instant Delivery",
-    "displayTitle": "DAZN Family - 3 Months",
+    "title": "DZN Family Subscription | Access 3 Months | Warranty Included | Instant Delivery",
+    "displayTitle": "DZN Family - 3 Months",
     "displaySubtitle": "Family sports access with warranty and instant delivery",
     "seller": "SafeAndCheap",
-    "service": "DAZN",
+    "service": "DZN",
     "image": "assets/30ca1f46-c678-4559-967f-692349ff5d2e.webp",
     "price": 9.97,
     "official": 89.97,
@@ -298,31 +298,31 @@
     "typePlanId": "ecba4cc3-e3e6-8d24-b95b-ed0b5c63c7e3",
     "i18n": {
       "fr": {
-        "displayTitle": "DAZN Family - 3 mois",
+        "displayTitle": "DZN Family - 3 mois",
         "displaySubtitle": "Acces sports famille avec garantie et livraison instantanee"
       },
       "de": {
-        "displayTitle": "DAZN Family - 3 Monate",
+        "displayTitle": "DZN Family - 3 Monate",
         "displaySubtitle": "Familien-Sportzugang mit Garantie und Sofortlieferung"
       },
       "es": {
-        "displayTitle": "DAZN Family - 3 meses",
+        "displayTitle": "DZN Family - 3 meses",
         "displaySubtitle": "Acceso deportivo familiar con garantia y entrega instantanea"
       },
       "pt": {
-        "displayTitle": "DAZN Family - 3 meses",
+        "displayTitle": "DZN Family - 3 meses",
         "displaySubtitle": "Acesso esportivo familiar com garantia e entrega instantanea"
       },
       "it": {
-        "displayTitle": "DAZN Family - 3 mesi",
+        "displayTitle": "DZN Family - 3 mesi",
         "displaySubtitle": "Accesso sport famiglia con garanzia e consegna immediata"
       },
       "ko": {
-        "displayTitle": "DAZN Family - 3개월",
+        "displayTitle": "DZN Family - 3개월",
         "displaySubtitle": "보증과 즉시 제공이 포함된 가족 스포츠 이용권"
       },
       "ar": {
-        "displayTitle": "DAZN Family - 3 أشهر",
+        "displayTitle": "DZN Family - 3 أشهر",
         "displaySubtitle": "وصول رياضي عائلي مع ضمان وتسليم فوري"
       }
     },
@@ -332,11 +332,11 @@
   {
     "sku": "dazn-premium-3m",
     "offerId": "signup-dazn-premium-1",
-    "title": "DAZN Premium Subscription | Access 3 Months | Warranty Included | Instant Delivery",
-    "displayTitle": "DAZN Premium - 3 Months",
+    "title": "DZN Premium Subscription | Access 3 Months | Warranty Included | Instant Delivery",
+    "displayTitle": "DZN Premium - 3 Months",
     "displaySubtitle": "Premium sports access with warranty and instant delivery",
     "seller": "SafeAndCheap",
-    "service": "DAZN",
+    "service": "DZN",
     "image": "assets/e74d116c-0780-4ba7-93e8-d68c6e527543.webp",
     "price": 9.97,
     "official": 89.97,
@@ -345,31 +345,31 @@
     "typePlanId": "12864304-3ad8-34f3-aab2-21db3fe19143",
     "i18n": {
       "fr": {
-        "displayTitle": "DAZN Premium - 3 mois",
+        "displayTitle": "DZN Premium - 3 mois",
         "displaySubtitle": "Acces sports Premium avec garantie et livraison instantanee"
       },
       "de": {
-        "displayTitle": "DAZN Premium - 3 Monate",
+        "displayTitle": "DZN Premium - 3 Monate",
         "displaySubtitle": "Premium-Sportzugang mit Garantie und Sofortlieferung"
       },
       "es": {
-        "displayTitle": "DAZN Premium - 3 meses",
+        "displayTitle": "DZN Premium - 3 meses",
         "displaySubtitle": "Acceso deportivo Premium con garantia y entrega instantanea"
       },
       "pt": {
-        "displayTitle": "DAZN Premium - 3 meses",
+        "displayTitle": "DZN Premium - 3 meses",
         "displaySubtitle": "Acesso esportivo Premium com garantia e entrega instantanea"
       },
       "it": {
-        "displayTitle": "DAZN Premium - 3 mesi",
+        "displayTitle": "DZN Premium - 3 mesi",
         "displaySubtitle": "Accesso sport Premium con garanzia e consegna immediata"
       },
       "ko": {
-        "displayTitle": "DAZN Premium - 3개월",
+        "displayTitle": "DZN Premium - 3개월",
         "displaySubtitle": "보증과 즉시 제공이 포함된 Premium 스포츠 이용권"
       },
       "ar": {
-        "displayTitle": "DAZN Premium - 3 أشهر",
+        "displayTitle": "DZN Premium - 3 أشهر",
         "displaySubtitle": "وصول رياضي Premium مع ضمان وتسليم فوري"
       }
     },

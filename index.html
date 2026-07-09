@@ -599,7 +599,7 @@
         "Prime Video": "https://www.gamsgo.com/accounts/prime-video",
         "Disney+": "https://www.gamsgo.com/accounts/disney",
         Gemini: "https://www.gamsgo.com/accounts/gemini",
-        DAZN: "https://www.gamsgo.com/accounts/dazn",
+        DZN: "https://www.gamsgo.com/accounts/dazn",
         Runway: "https://www.gamsgo.com/accounts/runway",
         Xbox: "https://www.gamsgo.com/accounts/xbox"
       };
@@ -646,7 +646,7 @@
 
       function productTier(product) {
         const firstTier = ["Netflix", "YouTube", "Claude"];
-        const secondTier = ["Prime Video", "Disney+", "Gemini", "DAZN"];
+        const secondTier = ["Prime Video", "Disney+", "Gemini", "DZN"];
 
         if (firstTier.includes(product.service)) {
           return 1;
@@ -951,7 +951,7 @@
           return;
         }
 
-        const serviceOrder = ["Netflix", "YouTube", "Prime Video", "Disney+", "Gemini", "DAZN"];
+        const serviceOrder = ["Netflix", "YouTube", "Prime Video", "Disney+", "Gemini", "DZN"];
         const availableServices = new Set(PRODUCTS.map((product) => product.service));
         const services = [
           ...serviceOrder.filter((service) => availableServices.has(service)),
